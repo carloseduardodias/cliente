@@ -1,0 +1,29 @@
+<ion-menu [content]="content">
+
+    <ion-content class="menu-left">
+
+        <div class="logo_menu">
+            <img src="assets/imgs/logo.png">
+        </div>
+
+        <ion-list class="list-full-border">
+
+          
+
+            <button ion-item menuClose *ngIf="authService.isLoggedin" (click)="logout()">
+                <ion-icon item-left name="log-out" color="primary-dark"></ion-icon>
+                Logout
+            </button>
+
+            <button ion-item menuClose *ngIf="!authService.isLoggedin" (click)="pushPage('LoginPage')">
+                <ion-icon item-left name="log-in" color="primary-dark"></ion-icon>
+                Login
+            </button>
+
+        </ion-list>
+
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

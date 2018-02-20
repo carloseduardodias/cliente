@@ -1,0 +1,117 @@
+<ion-content padding>
+
+    <ion-slides>
+
+        <ion-slide no-padding>
+            <!-- Logo -->
+            <div text-center class="logo">
+                <img src="assets/imgs/logo.png" />
+            </div>
+
+            <form #formLogin="ngForm" (ngSubmit)="login(formLogin.value)">
+                <!-- Login form -->
+                <ion-list class="list-form">
+
+                    <ion-item>
+                        <ion-label floating>E-mail</ion-label>
+                        <ion-input  type="email" name="login" ngModel></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label floating>Senha</ion-label>
+                        <ion-input  type="password" name="senha" ngModel></ion-input>
+                    </ion-item>
+
+                </ion-list>
+
+                <div text-right margin-bottom>
+                    <a ion-text text-right color="primary" (click)="recuperar()">Esqueceu a senha?</a>
+                </div>
+
+                <button ion-button block color="primary" type="submit">
+                    ENTRAR
+                </button>
+            </form>
+
+            <!-- Other links -->
+            <div class="signup">
+                <span ion-text (click)="nextSlide()">Novo aqui? Cadastre-se</span>
+            </div>
+        </ion-slide>
+
+
+        <ion-slide no-padding>
+            <!-- Logo -->
+            <div text-center class="logo">
+        		<img src="assets/img/menucerto_logo.png" />
+            </div>
+
+            <form #formCadastro="ngForm" (ngSubmit)="register(formCadastro.value)">
+                <p ion-text text-center color="light-dark">Todos os campos devem ser preenchidos corretamente!</p>
+                <ion-grid no-padding>
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label floating>Nome*</ion-label>
+                                <ion-input type="text" name="nome" ngModel ></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label floating>Telefone*</ion-label>
+                                <ion-input type="text" name="telefone" ngModel  mask="(99)99999-9999" ></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label floating>CPF*</ion-label>
+                                <ion-input type="text"  name="cpf" mask="999.999.999-99" ngModel ng-pattern="emailPattern"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label floating>E-mail*</ion-label>
+                                <ion-input type="email" name="email" patern="" ngModel ></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label floating>Senha*</ion-label>
+                                <ion-input name="senha" type="password" ngModel ></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label floating>Confirme a Senha*</ion-label>
+                                <ion-input name="senha_confirm" type="password" ngModel ></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <button ion-button block margin-top color="primary" type="submit" >
+                            CADASTRAR
+                        </button>
+                    </ion-row>
+
+                </ion-grid>
+            </form>
+
+            <!-- Other links -->
+            <div class="signup">
+                <span ion-text (click)="backSlide()">Já tenho uma conta!</span>
+            </div>
+        </ion-slide>
+
+    </ion-slides>
+
+</ion-content>

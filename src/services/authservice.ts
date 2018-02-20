@@ -14,6 +14,8 @@ export class AuthService {
         this.isLoggedin = false;
         this.userData = null;
         this.loadUserCredentials();
+        console.log('AuthService');
+        console.log(this.userData);
     }
 
 

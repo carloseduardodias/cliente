@@ -33,6 +33,7 @@ export class LoginPage {
     //--FUNCOES DE LOGIN------------------------------------------------------//
 
     login(values) {
+        console.log('1');
         if (values.login.trim().length>0 && values.senha.trim().length>0 ){
             let loader = this.loadingCtrl.create({content: "Verificando.."});
             loader.present();
@@ -40,7 +41,7 @@ export class LoginPage {
                 response => {
                     console.log(response);
                     loader.dismiss();
-                    this.viewCtrl.dismiss(true);
+                    this.nav.setRoot('HomePage');
                 },error => {
                     loader.dismiss();
                     this.alertCtrl.create({
@@ -99,8 +100,7 @@ export class LoginPage {
             //--Envia dados
             this.userService.adduser(values).then(
                 response => {
-                    // this.nav.push('FormularioPage');
-                    this.viewCtrl.dismiss(true);
+                    this.nav.push('HomePage');
                 },error => {
                     this.alertCtrl.create({
                         title: 'Aviso!',

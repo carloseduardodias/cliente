@@ -8,7 +8,7 @@
                 <img src="assets/imgs/logo.png" />
             </div>
 
-            <form #formLogin="ngForm" (ngSubmit)="login(formLogin.value)">
+            <form #formLogin="ngForm" >
                 <!-- Login form -->
                 <ion-list class="list-form">
 
@@ -24,16 +24,12 @@
 
                 </ion-list>
 
-                <div text-right margin-bottom>
-                    <a ion-text text-right color="primary" (click)="recuperar()">Esqueceu a senha?</a>
-                </div>
 
-                <button ion-button block color="primary" type="submit">
+                <button ion-button block color="primary" type="submit" (click)="login(formLogin.value)">
                     ENTRAR
                 </button>
             </form>
 
-            <!-- Other links -->
             <div class="signup">
                 <span ion-text (click)="nextSlide()">Novo aqui? Cadastre-se</span>
             </div>
@@ -46,7 +42,7 @@
         		<img src="assets/img/menucerto_logo.png" />
             </div>
 
-            <form #formCadastro="ngForm" (ngSubmit)="register(formCadastro.value)">
+            <form #formCadastro="ngForm" >
                 <p ion-text text-center color="light-dark">Todos os campos devem ser preenchidos corretamente!</p>
                 <ion-grid no-padding>
                     <ion-row>
@@ -98,7 +94,7 @@
                     </ion-row>
 
                     <ion-row>
-                        <button ion-button block margin-top color="primary" type="submit" >
+                        <button ion-button block margin-top color="primary" type="submit" (click)="register(formCadastro.value)">
                             CADASTRAR
                         </button>
                     </ion-row>

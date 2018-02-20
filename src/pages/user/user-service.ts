@@ -59,7 +59,7 @@ export class UserService {
         let dados = this.authService.getUser();
         console.log(dados);
         return new Promise( (resolve, reject) => {
-            this.httpService.putData(user, "users/:"+dados._id)
+            this.httpService.postData(user, "users/:"+dados._id)
             .subscribe( user => {
                 if(user.data){
                     this.authService.storeUserCredentials(user.data);

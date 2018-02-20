@@ -32,16 +32,6 @@ export class HttpService {
 		.catch(this.error);
 	}
 
-	putData(data, type): Observable<any>{
-		const headers = new Headers();
-		return this.http.put(
-			apiUrl+type,
-			data,
-			new RequestOptions({headers: headers}))
-		.map(response=>response.json())
-		.catch(this.error);
-	}
-  
 	getData(url):Observable<any>{
 		return this.http.get(`${apiUrl}${url}`)
       	.map(response => response.json())

@@ -33,9 +33,12 @@ export class MyApp {
             if (platform.is('android')) {
                 keyboard.disableScroll(true);
             }
-
-           
-
+            this.user = this.authService.getUser();
+            console.log('user');
+            console.log(this.user);
+            if (!this.user) {
+                this.rootPage='LoginPage';
+            }
         });
     }
 
